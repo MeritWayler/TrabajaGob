@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title> TrabajaGob </title>
+    </head>
+
+    <body style="background-color: rgb(113,127,112)">
+
+<nav class="navbar navbar-default" role="navigation" style="background-color:rgb(180,204,185); border: solid black 1px" >
+  <div class="container-fluid">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!--NavBar para estadisticas y datos -->
+      <a class="navbar-brand" href="#">Estadistica1</a>
+      <a class="navbar-brand" href="#">Estadistica2</a >
+    </div>
+
+    <!-- link a suscribirse en la derecha del NavBar -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Suscribete</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Jumbotron para header y subheader -->
+<div class= "jumbotron" style=" background-color:rgb(113,127,112)">
+  <div class= "container">
+    <h1 style= "text-align:center">Quiero trabajar en el gobierno</h1>
+    <p> Busca y consigue trabajo que siempre has deseado dentro del gobierno </p> 
+  </div>
+</div>
+
+
+
+
+<div class= "container">
+  <%= form_tag job_search_path , :method => 'get'  do %>
+    <div class="row">
+    <div class="form-inline " style="text-align: center">
+      <div class ="form-group">
+        <div class="input-group">
+          <div class="input-group-addon search-transparent">
+            <label for="location-search">  <span class="glyphicon glyphicon-map-marker">  </span></label>
+          </div>
+          <%= text_field_tag :searchLocation, params[:searchLocation], placeholder: "Estado,Ciudad", class:"form-control input-lg no-border-left", style: "width:300px", id:"location-search" %>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon search-transparent">
+            <label for="type-search">  <span class="glyphicon glyphicon-search">  </span></label>
+          </div>
+          <%= text_field_tag :searchArea, params[:searchArea], placeholder: "area", class: "form-control input-lg no-border-left", style: "width:300px", id:"type-search" %>
+        </div>
+      </div>
+      <strong>
+        <%= submit_tag "Buscar" , name: nil, id: "boton-submit", class: "btn btn-primary btn-lg"  %>
+      </strong>
+    </div>
+  </div>
+<% end %>
+
+</div>
+<!-- Se acaba la forma -->
+
+<!--EL div representa un espacio para la linea de separacion -->
+<div style="padding:15px"> </div>
+
+<!-- linea de separacion-->
+<div class="line-separator"></div>
+<br>
+<!-- switch de localidad y area de trabajo -->
+<div class="row">
+  <div class="col-md-3 col-centered">
+<div class="btn-group btn-toggle ">
+  <button class="btn btn-lg btn-default">Lugar</button>
+  <button class="btn btn-lg btn-default">Area</button>
+  <button class="btn btn-lg btn-default">Organización</button>
+</div>
+</div>
+</div>
+
+<div class="container">
+  <div class"row">
+    <div class= col-md-4>
+      <a href="#"> link1 </a> 
+    </div>
+    <div class="col-md-4">
+      <a href="#"> link2 </a>
+    </div>
+
+
+
+  </body>
+  </html>

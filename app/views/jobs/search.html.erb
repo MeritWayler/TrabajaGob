@@ -1,0 +1,116 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Estadisticas</a>
+      <a class="navbar-brand" href="#">Trabajos mas buscados</a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Suscribete</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--Termina header navigation -->
+
+
+
+<div class="row">
+  <!--side bar -->
+  <div class="col-sm-3">
+    <div class="sidebar-nav" style="width:250px; padding-top: -30px;">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">Busqueda</span>
+        </div>
+
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+
+            <div class= "container">
+              <%= form_tag job_search_path , :method => 'get'  do %>
+
+            <div class ="form-group">
+              <div class="input-group">
+                <div class="input-group-addon search-transparent">
+                  <label for="location-search">  <span class="glyphicon glyphicon-map-marker">  </span></label>
+                </div>
+                <%= text_field_tag :searchLocation, params[:searchLocation], placeholder: "Estado,Ciudad", class:"form-control  no-border-left", style:"width:150px", id:"location-search" %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon search-transparent">
+                  <label for="type-search">  <span class="glyphicon glyphicon-search">  </span></label>
+                </div>
+                <%= text_field_tag :searchArea, params[:searchArea], placeholder: "area", class: "form-control no-border-left", style: "width:150px", id:"type-search" %>
+              </div>
+            </div>
+
+            <strong>
+              <%= submit_tag "Buscar" , name: nil, class: "btn btn-primary "  %>
+            </strong>
+          </div>
+        </div>
+      <% end %>
+      <div class="container">
+      <h3> Filtrar Resultados </h3>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="width:160px; height:40px; padding-left:2px">
+
+          Organización
+          <span class="caret"></span>
+        </button>
+  <li role="presentation" class="divider"></li>
+
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation" style="width:150px;"><a role="menuitem" tabindex="-1" href="#" >primeraOrg</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="width:150px">primeraOrg</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="width:150px">primeraOrg</a></li>
+        </ul>
+
+         <div class="dropdown">
+         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="width:160px; height:40px; padding-left:2px">
+
+           Organización
+           <span class="caret"></span>
+         </button>
+   <li role="presentation" class="divider"></li>
+
+         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+           <li role="presentation" style="width:150px;"><a role="menuitem" tabindex="-1" href="#" style="width:150px">primeraOrg</a></li>
+           <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="width:150px">primeraOrg</a></li>
+           <li role="presentation"><a role="menuitem" tabindex="-1" href="#" style="width:150px">primeraOrg</a></li>
+         </ul>
+
+        </div>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+   </div>
+   <div class="col-sm-9">
+     <p>
+     <%= @resultados %>
+     </p>
+   </div>
+ </div>
+
+
+
